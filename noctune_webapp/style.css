@@ -1,0 +1,196 @@
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: #0a0a12 url('assets/noise_texture.png');
+    background-blend-mode: overlay;
+    color: #fff;
+    display: flex;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.sidebar {
+    width: 240px;
+    background-color: rgba(15, 15, 25, 0.95);
+    backdrop-filter: blur(20px);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    border-right: 1px solid #222;
+}
+
+.sidebar .logo {
+    font-size: 26px;
+    font-weight: bold;
+    margin-bottom: 50px;
+    color: #b84eff;
+    text-shadow: 0 0 5px #b84eff88;
+}
+
+.sidebar nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar nav ul li {
+    display: flex;
+    align-items: center;
+    padding: 12px;
+    margin-bottom: 15px;
+    cursor: pointer;
+    border-radius: 12px;
+    transition: background 0.3s, transform 0.3s;
+    font-size: 16px;
+}
+
+.sidebar nav ul li img {
+    width: 22px;
+    margin-right: 12px;
+}
+
+.sidebar nav ul li:hover {
+    background-color: rgba(184, 78, 255, 0.15);
+    transform: scale(1.05);
+}
+
+.main-content {
+    flex: 1;
+    padding: 40px;
+    overflow-y: auto;
+}
+
+.carousel {
+    margin-bottom: 40px;
+    overflow-x: auto;
+}
+
+.carousel-track {
+    display: flex;
+    gap: 24px;
+}
+
+.carousel-track img {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    transition: transform 0.5s, box-shadow 0.5s;
+    box-shadow: 0 0 25px #b84eff60;
+}
+
+.carousel-track img:hover {
+    transform: scale(1.2);
+    box-shadow: 0 0 40px #b84effcc;
+}
+
+.featured-title {
+    margin-bottom: 24px;
+    font-size: 22px;
+    color: #b84eff;
+    text-shadow: 0 0 5px #b84eff88;
+}
+
+.featured {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+}
+
+.featured img {
+    width: 160px;
+    border-radius: 18px;
+    cursor: pointer;
+    transition: transform 0.4s, box-shadow 0.4s;
+}
+
+.featured img:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 20px #b84effcc;
+}
+
+.player {
+    position: fixed;
+    bottom: 0;
+    left: 240px;
+    right: 0;
+    background-color: rgba(15, 15, 25, 0.97);
+    display: flex;
+    align-items: center;
+    padding: 12px 20px;
+    border-top: 1px solid #333;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.3s;
+}
+
+.player:hover {
+    background-color: rgba(30, 30, 40, 0.97);
+    transform: scale(1.01);
+}
+
+.player img {
+    width: 55px;
+    height: 55px;
+    border-radius: 12px;
+    margin-right: 20px;
+}
+
+.player .track-info {
+    flex: 1;
+}
+
+.player .track-title {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.player .track-artist {
+    font-size: 13px;
+    color: #aaa;
+}
+
+.progress-bar {
+    width: 200px;
+    height: 6px;
+    background: #333;
+    border-radius: 6px;
+    overflow: hidden;
+    margin-left: 20px;
+}
+
+.progress-bar .progress {
+    width: 40%;
+    height: 100%;
+    background: linear-gradient(90deg, #b84eff, #4effd7);
+    animation: progressAnim 3s infinite alternate ease-in-out;
+}
+
+@keyframes progressAnim {
+    0% {
+        width: 10%;
+    }
+    100% {
+        width: 80%;
+    }
+}
+
+@media (max-width: 768px) {
+    .sidebar {
+        display: none;
+    }
+
+    .main-content {
+        padding: 20px;
+    }
+
+    .carousel-track img {
+        width: 100px;
+        height: 100px;
+    }
+
+    .featured img {
+        width: 120px;
+    }
+
+    .player {
+        left: 0;
+    }
+}
