@@ -1,40 +1,33 @@
-body {
-    margin: 0;
-    font-family: 'Arial', sans-serif;
-    background-color: #0f0f1a;
-    color: white;
-    display: flex;
-    background: linear-gradient(135deg, #0f0f1a 0%, #1a1a2e 50%, #0f0f1a 100%);
-    background-size: 400% 400%;
-    animation: gradientBackground 15s ease infinite;
-}
-
-@keyframes gradientBackground {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
-}
-
-.sidebar {
-    width: 220px;
-    background-color: rgba(0, 0, 0, 0.85);
-    padding: 20px;
-    height: 100vh;
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    backdrop-filter: blur(10px);
-    box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
-}
-
-.sidebar h2 {
-    color: #00ffd5;
-    margin-bottom: 20px;
-    text-shadow: 0 0 5px #00ffd5, 0 0 10px #00ffd5;
-}
-
-.sidebar ul {
-    list-style: none;
-    padding: 0;
-    w
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Noctune</title>
+    <link rel="stylesheet" href="style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+    <div class="sidebar">
+        <h2>Noctune</h2>
+        <ul>
+            <li data-tab="home" class="active-tab">🏠 Home</li>
+            <li data-tab="search">🔍 Search</li>
+            <li data-tab="playlists">🎵 Playlists</li>
+            <li data-tab="albums">💿 Albums</li>
+        </ul>
+        <button class="add-playlist">➕ Add New Playlist</button>
+    </div>
+    
+    <div class="main-content">
+        <div id="home" class="tab active">
+            <h1>Popular</h1>
+            <div class="carousel">
+                <div class="carousel-item">🎧</div>
+                <div class="carousel-item">🎵</div>
+                <div class="carousel-item">🎼</div>
+                <div class="carousel-item">🎷</div>
+                <div class="carousel-item">🎸</div>
+            </div>
+            
+            <h2>Featured</h2>
