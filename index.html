@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Noctune</title>
     <link rel="stylesheet" href="style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
 </head>
 <body>
     <div class="sidebar">
@@ -13,33 +14,20 @@
             <li data-tab="home" class="active-tab">🏠 Home</li>
             <li data-tab="search">🔍 Search</li>
             <li data-tab="playlists">🎵 Playlists</li>
+            <li data-tab="albums">💿 Albums</li>
         </ul>
+        <button class="add-playlist">➕ Add New Playlist</button>
     </div>
     
     <div class="main-content">
         <div id="home" class="tab active">
-            <h1>Welcome to Noctune</h1>
-            <p>Рекомендованные треки появятся здесь...</p>
-        </div>
-        
-        <div id="search" class="tab">
-            <h1>Search</h1>
-            <input type="text" placeholder="Поиск трека или исполнителя..." id="search-input"/>
-            <div id="search-results"></div>
-        </div>
-        
-        <div id="playlists" class="tab">
-            <h1>My Playlists</h1>
-            <button id="create-playlist">Создать плейлист</button>
-            <div id="playlists-list"></div>
-        </div>
-    </div>
-    
-    <div class="player">
-        <div id="current-track">Нет трека</div>
-        <button id="play-btn">▶️</button>
-    </div>
-
-    <script src="app.js"></script>
-</body>
-</html>
+            <h1>Popular</h1>
+            <div class="carousel">
+                <div class="carousel-item">🎧</div>
+                <div class="carousel-item">🎵</div>
+                <div class="carousel-item">🎼</div>
+                <div class="carousel-item">🎷</div>
+                <div class="carousel-item">🎸</div>
+            </div>
+            
+            <h2>Featured</h2>
