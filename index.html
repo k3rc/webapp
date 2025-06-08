@@ -1,8 +1,16 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Noctune</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
 <body>
     <div class="sidebar">
         <h2>Noctune</h2>
         <ul>
-            <li data-tab="home">🏠 Home</li>
+            <li data-tab="home" class="active-tab">🏠 Home</li>
             <li data-tab="search">🔍 Search</li>
             <li data-tab="playlists">🎵 Playlists</li>
         </ul>
@@ -10,18 +18,18 @@
     
     <div class="main-content">
         <div id="home" class="tab active">
-            <h1>Home</h1>
-            <p>Рекомендованные треки...</p>
+            <h1>Welcome to Noctune</h1>
+            <p>Рекомендованные треки появятся здесь...</p>
         </div>
         
         <div id="search" class="tab">
             <h1>Search</h1>
-            <input type="text" placeholder="Поиск трека..." id="search-input"/>
+            <input type="text" placeholder="Поиск трека или исполнителя..." id="search-input"/>
             <div id="search-results"></div>
         </div>
         
         <div id="playlists" class="tab">
-            <h1>Playlists</h1>
+            <h1>My Playlists</h1>
             <button id="create-playlist">Создать плейлист</button>
             <div id="playlists-list"></div>
         </div>
@@ -34,3 +42,4 @@
 
     <script src="app.js"></script>
 </body>
+</html>
