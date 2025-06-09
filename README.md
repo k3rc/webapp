@@ -1,4 +1,4 @@
-# Noctune WebApp 🎵
+# Loop WebApp 🎵
 
 A Spotify-like dark-themed music web app with modern SPA navigation and animated design.
 
@@ -27,4 +27,4 @@ You may need the following:
 - `API_URL` (if backend is hosted separately)
 
 ---
-Enjoy Noctune 🎧
+Enjoy Loop 🎧
