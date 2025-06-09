@@ -1,50 +1,72 @@
-const tracks = [
-  {
-    title: "Demo Track from Telegram",
-    file_id: "BQACAgQAAxkBAAI123Zl...demo_file_id...",
-    type: "telegram"
-  },
-  {
-    title: "External MP3 File",
-    url: "https://example.com/audio.mp3",
-    type: "external"
-  }
-];
-
-function search() {
-  const query = document.getElementById("query").value.toLowerCase();
-  const results = tracks.filter(t => t.title.toLowerCase().includes(query));
-  render(results);
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+  color: white;
+  min-height: 100vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
 }
 
-function render(list) {
-  const container = document.getElementById("playlist");
-  container.innerHTML = "";
-
-  list.forEach(track => {
-    const div = document.createElement("div");
-    div.className = "track";
-    div.innerHTML = `
-      <div>${track.title}</div>
-      <button onclick='play("${track.type}", "${track.file_id || track.url}")'>▶️</button>
-    `;
-    container.appendChild(div);
-  });
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(0,0,0,0.5);
+  padding: 1rem 2rem;
+  backdrop-filter: blur(10px);
 }
 
-function play(type, ref) {
-  if (type === "external") {
-    const audio = new Audio(ref);
-    audio.play();
-  } else if (type === "telegram") {
-    const token = "YOUR_TELEGRAM_BOT_TOKEN";
-    fetch(`https://api.telegram.org/bot${token}/getFile?file_id=${ref}`)
-      .then(res => res.json())
-      .then(data => {
-        const path = data.result.file_path;
-        const audioUrl = `https://api.telegram.org/file/bot${token}/${path}`;
-        const audio = new Audio(audioUrl);
-        audio.play();
-      });
-  }
+nav h1 {
+  font-size: 1.5rem;
+  color: #fff;
+}
+
+nav ul {
+  display: flex;
+  gap: 1.5rem;
+  list-style: none;
+}
+
+nav ul li {
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+nav ul li:hover {
+  color: #00d9ff;
+}
+
+main {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.section {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  animation: fadeIn 1s ease forwards;
+}
+
+.section.active {
+  display: flex;
+}
+
+input[type="text"] {
+  padding: 0.5rem;
+  border-radius: 5px;
+  border: none;
+  margin-top: 1rem;
+  width: 80%;
+  max-width: 400px;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
 }
