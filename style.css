@@ -1,19 +1,23 @@
 body {
   margin: 0;
   font-family: 'Segoe UI', sans-serif;
-  background: linear-gradient(270deg, #0f0c29, #302b63, #24243e);
-  background-size: 600% 600%;
-  animation: gradientBG 15s ease infinite;
+  background: #0e0e1c;
   color: white;
+  overflow-x: hidden;
+  position: relative;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
 }
 
-@keyframes gradientBG {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
+.background-animation {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  opacity: 0.2;
 }
 
 nav {
@@ -25,9 +29,8 @@ nav {
   backdrop-filter: blur(10px);
 }
 
-nav h1 {
-  font-size: 1.5rem;
-  color: #fff;
+nav .logo {
+  height: 40px;
 }
 
 nav ul {
@@ -89,8 +92,8 @@ main {
 }
 
 input[type="text"] {
-  padding: 0.5rem;
-  border-radius: 5px;
+  padding: 0.75rem;
+  border-radius: 30px;
   border: none;
   margin-top: 1rem;
   width: 80%;
@@ -98,29 +101,56 @@ input[type="text"] {
   background-color: rgba(255, 255, 255, 0.1);
   color: #fff;
   text-align: center;
+  font-size: 1rem;
+  position: relative;
+  z-index: 2;
 }
 
-input[type="text"]::placeholder {
-  color: #aaa;
+.search-box {
+  position: relative;
+  width: 80%;
+  max-width: 400px;
+}
+
+.search-animation {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 150%;
+  height: 150%;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(0,217,255,0.3) 0%, rgba(0,0,0,0) 70%);
+  animation: pulse 2s infinite;
+  z-index: 1;
+}
+
+@keyframes pulse {
+  0% { transform: translate(-50%, -50%) scale(0.9); opacity: 0.6; }
+  50% { transform: translate(-50%, -50%) scale(1); opacity: 0.3; }
+  100% { transform: translate(-50%, -50%) scale(0.9); opacity: 0.6; }
 }
 
 .playlist {
   list-style: none;
   padding: 0;
   margin-top: 1rem;
+  width: 80%;
+  max-width: 500px;
 }
 
 .playlist li {
   margin: 0.5rem 0;
-  padding: 0.5rem 1rem;
+  padding: 0.75rem 1.2rem;
   background: rgba(255, 255, 255, 0.1);
   border-radius: 10px;
   cursor: pointer;
-  transition: background 0.3s ease;
+  transition: background 0.3s ease, transform 0.2s ease;
 }
 
 .playlist li:hover {
   background: rgba(0, 217, 255, 0.2);
+  transform: translateY(-2px);
 }
 
 @keyframes fadeIn {
@@ -140,8 +170,8 @@ input[type="text"]::placeholder {
     gap: 1rem;
   }
 
-  nav h1 {
-    font-size: 1.2rem;
+  nav .logo {
+    height: 30px;
   }
 
   .glow-button {
