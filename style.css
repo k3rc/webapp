@@ -1,12 +1,19 @@
 body {
   margin: 0;
   font-family: 'Segoe UI', sans-serif;
-  background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+  background: linear-gradient(270deg, #0f0c29, #302b63, #24243e);
+  background-size: 600% 600%;
+  animation: gradientBG 15s ease infinite;
   color: white;
   min-height: 100vh;
-  overflow: hidden;
   display: flex;
   flex-direction: column;
+}
+
+@keyframes gradientBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
 nav {
@@ -43,6 +50,7 @@ main {
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 1rem;
 }
 
 .section {
@@ -57,6 +65,29 @@ main {
   display: flex;
 }
 
+.glow {
+  color: #fff;
+  text-shadow: 0 0 5px #00d9ff, 0 0 10px #00d9ff, 0 0 20px #00d9ff;
+}
+
+.glow-button {
+  margin-top: 1rem;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 50px;
+  background: #00d9ff;
+  color: #000;
+  font-size: 1rem;
+  cursor: pointer;
+  box-shadow: 0 0 10px #00d9ff, 0 0 20px #00d9ff;
+  transition: 0.3s ease-in-out;
+}
+
+.glow-button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px #00d9ff, 0 0 30px #00d9ff;
+}
+
 input[type="text"] {
   padding: 0.5rem;
   border-radius: 5px;
@@ -64,9 +95,60 @@ input[type="text"] {
   margin-top: 1rem;
   width: 80%;
   max-width: 400px;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  text-align: center;
+}
+
+input[type="text"]::placeholder {
+  color: #aaa;
+}
+
+.playlist {
+  list-style: none;
+  padding: 0;
+  margin-top: 1rem;
+}
+
+.playlist li {
+  margin: 0.5rem 0;
+  padding: 0.5rem 1rem;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.playlist li:hover {
+  background: rgba(0, 217, 255, 0.2);
 }
 
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(10px); }
   to { opacity: 1; transform: translateY(0); }
+}
+
+.subtitle {
+  font-size: 1.2rem;
+  color: #aaa;
+  margin-bottom: 1rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  nav ul {
+    gap: 1rem;
+  }
+
+  nav h1 {
+    font-size: 1.2rem;
+  }
+
+  .glow-button {
+    padding: 0.5rem 1rem;
+  }
+
+  input[type="text"] {
+    width: 90%;
+  }
 }
