@@ -2,40 +2,50 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Loop - Music Streaming App</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Noctune - Music Streaming App</title>
   <link rel="stylesheet" href="style.css" />
-  <link rel="icon" href="favicon.ico" type="image/x-icon" />
+  <link rel="icon" href="assets/logo.svg" type="image/svg+xml" />
 </head>
 <body>
+  <div class="background-animation">
+    <img src="assets/bg.svg" alt="Background Animation" />
+  </div>
+
   <nav>
-    <h1>Loop</h1>
+    <img src="assets/logo.svg" alt="Noctune" class="logo" />
     <ul>
       <li data-section="home">Home</li>
       <li data-section="search">Search</li>
       <li data-section="playlist">Playlist</li>
     </ul>
   </nav>
+
   <main>
     <section id="home" class="section active">
-      <h2>Welcome to <span class="glow">Loop</span></h2>
+      <h2>Welcome to <span class="glow">Noctune</span></h2>
       <p class="subtitle">Experience the future of music streaming</p>
       <button class="glow-button">Play Now</button>
     </section>
+
     <section id="search" class="section">
       <h2 class="glow">Search Music</h2>
-      <input type="text" placeholder="Search your favorite tracks..." />
+      <div class="search-box">
+        <input type="text" id="searchInput" placeholder="Search your favorite tracks..." />
+        <div class="search-animation"></div>
+      </div>
       <button class="glow-button">Search</button>
     </section>
+
     <section id="playlist" class="section">
       <h2 class="glow">Your Playlist</h2>
-      <ul class="playlist">
-        <li>🎵 Song 1 - Artist</li>
-        <li>🎵 Song 2 - Artist</li>
-        <li>🎵 Song 3 - Artist</li>
+      <ul id="playlist" class="playlist">
+        <!-- Playlist will be populated by JS -->
       </ul>
     </section>
   </main>
+
   <script src="spa.js"></script>
+  <script src="playlist.js"></script>
 </body>
 </html>
