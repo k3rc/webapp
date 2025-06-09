@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Noctune - Music Streaming App</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
+</head>
+<body>
+  <nav>
+    <h1>Noctune</h1>
+    <ul>
+      <li data-section="home">Home</li>
+      <li data-section="search">Search</li>
+      <li data-section="playlist">Playlist</li>
+    </ul>
+  </nav>
+  <main>
+    <section id="home" class="section active">
+      <h2>Welcome to Noctune</h2>
+      <p>Enjoy music in style.</p>
+    </section>
+    <section id="search" class="section">
+      <h2>Search Music</h2>
+      <input type="text" placeholder="Search your favorite tracks..." />
+    </section>
+    <section id="playlist" class="section">
+      <h2>Your Playlist</h2>
+      <p>No tracks yet.</p>
+    </section>
+  </main>
+  <script src="spa.js"></script>
+</body>
+</html>
