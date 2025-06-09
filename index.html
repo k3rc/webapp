@@ -2,49 +2,34 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Loop - Music Streaming App</title>
-  <link rel="stylesheet" href="style.css" />
-  <link rel="icon" href="assets/logo.svg" type="image/svg+xml" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Loop — Your Personal Streaming Space</title>
+  <link rel="stylesheet" href="assets/style.css" />
+  <script src="assets/upload.js" defer></script>
 </head>
 <body>
-  <div class="background-animation">
-    <img src="assets/bg.svg" alt="Background Animation" />
-  </div>
+  <header class="header">
+    <h1 class="logo">Loop</h1>
+    <p class="tagline">Your Personal Streaming Space</p>
+  </header>
 
-  <nav>
-    <img src="assets/logo.svg" alt="Loop" class="logo" />
-    <ul>
-      <li data-section="home">Home</li>
-      <li data-section="search">Search</li>
-      <li data-section="playlist">Playlist</li>
-    </ul>
-  </nav>
-
-  <main>
-    <section id="home" class="section active">
-      <h2>Welcome to <span class="glow">Loop</span></h2>
-      <p class="subtitle">Experience the future of music streaming</p>
-      <button class="glow-button">Play Now</button>
+  <main class="main-content">
+    <section id="upload" class="section">
+      <h2 class="glow">Upload Music</h2>
+      <label class="upload-btn">
+        + Add Track
+        <input type="file" id="fileInput" accept="audio/*" hidden />
+      </label>
     </section>
 
-    <section id="search" class="section">
-      <h2 class="glow">Search Music</h2>
-      <div class="search-box">
-        <input type="text" id="searchInput" placeholder="Search your favorite tracks..." />
-        <div class="search-animation"></div>
-      </div>
-      <button class="glow-button">Search</button>
+    <section id="playlist-section" class="section">
+      <h2 class="glow">Your Playlist</h2>
+      <ul id="playlist" class="playlist"></ul>
     </section>
-
-    <section id="playlist" class="section">
-  <h2 class="glow">Your Playlist</h2>
-  <input type="file" id="fileInput" accept="audio/*" />
-  <ul id="playlist" class="playlist"></ul>
-</section>
   </main>
 
-  <script src="spa.js"></script>
-  <script src="playlist.js"></script>
+  <footer class="footer">
+    Loop &copy; 2025
+  </footer>
 </body>
 </html>
